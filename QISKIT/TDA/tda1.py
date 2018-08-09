@@ -7,7 +7,7 @@ from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
 from qiskit import execute, register
 import Qconfig
 
-# Set your API Token.
+# Set your API Token
 QX_TOKEN = Qconfig.APItoken
 QX_URL = Qconfig.config["url"]
 
@@ -30,10 +30,10 @@ qc.measure(q[1], c[1])
 qc.measure(q[2], c[2])
 qc.measure(q[4], c[4])
 
-# Compile and run the Quantum circuit on a simulator backend
+# Compile and run the Quantum circuit
 shots = 1024
 backend_options = ["local_qasm_simulator", "ibmqx4", "ibmqx5"]
-use_backend = backend_options[2]
+use_backend = backend_options[1]
 job_sim = execute(qc, use_backend, shots=shots)
 sim_result = job_sim.result()
 
